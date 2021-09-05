@@ -1,0 +1,108 @@
+﻿@model ExamManagement.Models.Ent_Question 
+
+
+@{
+    ViewBag.Title = "AddQuestion";
+    Layout = "~/Views/Shared/TeacherLayout.cshtml";
+}
+
+<h2>AddQuestion</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("AddChoices", "Teacher", FormMethod.Get)) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Ent_Question</legend>
+        <div class="inner-banner-w3ls py-5" id="home">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- register  -->
+            <div class="modal-body mt-md-2 mt-5">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Add Questions</h3>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Qid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Qid)
+            @Html.ValidationMessageFor(model => model.Qid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QCid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QCid)
+            @Html.ValidationMessageFor(model => model.QCid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model =>model.QuestionType,new List <SelectListItem>
+       {new SelectListItem{Text="RADIO",Value="RADIO"},new SelectListItem{Text="Text",Value="Text"},new SelectListItem{Text="CheckBox",Value="CheckBox"}},"--Select Your option--")
+            @Html.ValidationMessageFor(model => model.QuestionType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Question1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Question1)
+            @Html.ValidationMessageFor(model => model.Question1)
+        </div>
+  
+      @*   <div class="editor-label">
+            @Html.LabelFor(model => model.Choices)
+            
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Choices)
+            @Html.ValidationMessageFor(model => model.Choices)
+        </div>*@
+     
+
+      @*  <div class="editor-label">
+            @Html.LabelFor(model => model.ExhibitId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExhibitId)
+            @Html.ValidationMessageFor(model => model.ExhibitId)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.points)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.points)
+            @Html.ValidationMessageFor(model => model.points)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isactive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isactive)
+            @Html.ValidationMessageFor(model => model.isactive)
+        </div>
+                @Html.HiddenFor(x=>Model.Qid)
+                @Html.HiddenFor(x=>Model.points)
+        @Html.HiddenFor(x=>Model.Question1)
+    @Html.HiddenFor(x=>Model.QuestionCategory)
+    @Html.HiddenFor(x=>Model.QuestionType)
+    @Html.HiddenFor(x=>Model.QCid)
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+
+    </div>
+    </div>
+    </div>
+            </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

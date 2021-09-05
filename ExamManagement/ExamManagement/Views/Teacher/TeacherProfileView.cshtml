@@ -1,0 +1,95 @@
+﻿@model ExamManagement.Models.Ent_Register
+
+@{
+    ViewBag.Title = "TeacherProfileView";
+    Layout = "~/Views/Shared/TeacherLayout.cshtml";
+}
+
+<h2>TeacherProfileView</h2>
+<div class="inner-banner-w3ls py-5" id="home">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- login  -->
+            <div class="modal-body my-5 pt-4">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">My Profile</h3>
+                <div class="display-field">
+            <img src="@ViewBag.img" height="150px" width="150px" style="border-radius:75px; display: block;
+  margin-left: auto;
+  margin-right: auto;"
+ />
+                    </div><br />
+    <div class="display-label">Name</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+     <div class="display-label">Department</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Department)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field" style="
+    color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+     <div class="display-label">Phone</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+                 <div class="display-label">Role</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Role)
+    </div>
+                 <div class="display-label">Status</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+                <div class="display-label">Password</div>
+    <div class="display-field" style="
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.password)
+    </div>
+                </div>
+            </div>
+<p>
+    @Html.ActionLink("TeacherEditProfile", "TeacherEditProfile", new { id=Model.Rid}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+	</div>
+			</div>
+
+
+

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<ExamManagement.Models.StudentResult>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="page-wrapper">
+        <div class="graphs">
+     	<div class="col_3">
+<table id="myTable"  class="table table-striped table-bordered dt-responsive nowrap">
+    <tr>
+        <th>
+            TestId
+        </th>
+        <th>
+            RegistrationId
+        </th>
+        <th>
+            MarkScored
+        </th>
+        <th>
+            Question
+        </th>
+        <th>
+            QuestionType
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Label
+        </th>
+     
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarkScored)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Label)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>
+             </div>
+            </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({ 
+
+            "processing": true, // for show progress bar  
+            "serverSide": true, // for process server side  
+            "filter": true, // this is for disable filter (search box)  
+            "orderMulti": false, // for disable multiple column at once  
+            "pageLength": 5,  
+  
+            "ajax": {  
+                "url": "/admin/List",  
+                "type": "GET",  
+                "datatype": "json"  
+            },  
+  
+            },
+            });
+    });
+    
+</script>

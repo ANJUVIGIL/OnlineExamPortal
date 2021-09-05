@@ -1,0 +1,110 @@
+﻿@model IEnumerable<ExamManagement.Models.Ent_Register>
+
+@{
+    ViewBag.Title = "ViewAllstudent";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    th {
+        background-color:aqua;
+         border:1px solid #808080;
+        text-align:center;
+        padding:15px;
+    }
+    td {
+        border:1px solid #808080;
+        text-align:center;
+    }
+</style>
+<div id="page-wrapper">
+        <div class="graphs">
+     	<div class="col_3">
+
+<h2>ViewAllstudent</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="border:1px solid cyan;padding:15px;border-radius:4px;width:100%;">
+    <tr >
+        <th>
+            Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            password
+        </th>
+        <th>
+            EntryDate
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Role
+        </th>
+        <th></th>
+    </tr>
+    @*@for (int i = 0; i < 10 ;i++ )
+    {
+        <tr>
+            <td>*@
+     @*<img src="@ViewBag.img" height="180px" width="180px" style="border-radius:100px; display: block; />
+                @ViewBag.img
+            </td>
+        </tr>
+    }*@
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+            
+           @* <img src="@ViewBag.img" height="180px" width="180px" style="border-radius:100px; display: block; />*@
+            @*@Html.DisplayFor(modelItem => item.Image)*@
+             
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.ActionLink("Approve", "AcceptVisitor", new {id= @item.Rid }) |
+           @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

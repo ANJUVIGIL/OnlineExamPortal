@@ -1,0 +1,83 @@
+﻿@model ExamManagement.Models.Ent_Student
+
+@{
+    ViewBag.Title = "Instruction";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+<h2>Instruction</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@*@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Ent_Student</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>*@
+
+        <div class="inner-banner-w3ls py-5" id="home" style="color:white;">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- login  -->
+            <div class="modal-body my-5 pt-4">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Instructions</h3>
+                     <div class="form-group">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>@ViewBag.TestName</h2>
+            @ViewBag.TestDescription
+        </div>
+        <div class="col-md-6">
+         Test Duration :@(ViewBag.TestDuration) minutes
+            <br />Total Question :@ViewBag.Test
+        </div>
+</div>
+    <br /><br />
+    <div class="row">
+        <div class="col-md-12">
+            Before you begin, please read the following instructions carefully.
+            </div>
+        </div>
+    <h3>How to score more?</h3>
+    <ul>
+        <li>The test is used to evaluate your expertise, creativity, productivity, knowledge and decision making technique</li>
+        <li>You may use resourse availble </li>
+        <li>Do not use internet or external resouses outside of this machine</li>
+        <li>Remember that this is test of experience, so do not be satisfied with one answer on descriptive type questios</li>
+        <li>Negative mark is applied on multiple choice questions.</li>
+    </ul>
+
+    <h3>How to use application?</h3>
+    <li>Your answers are not tracked unless you click on the <span class="highlight"><b>Save & Next</b></span> button</li>
+    <li>Questions which has <b>Excercises</b> in them use visual studio and write something like "completed/done/finished</li>
+    <li>There is no <b> End or Submit </b> button to end the evaluation just walk out when you are done</li>
+    <li>Your time start immediately when you click the <b>register and start </b> button below</li>
+    </div>
+                        
+   
+
+   @if(Model!= null)
+{
+    using (Html.BeginForm("exam","Student", FormMethod.Post, new { @Id = "formRegister" }))
+    {
+    @Html.HiddenFor(x=>Model.Id)
+    @Html.HiddenFor(x=>Model.Name)
+    @Html.HiddenFor(x=>Model.Email)
+    @Html.HiddenFor(x=>Model.Phone)
+       <button onclick="getElementById" type="submit" class="btn button-style-w3">Start</button>@*
+  <a href="javascript:void(0)" onclick="getElementById("formRegister").submit();" class="btn btn-primary ">Start</a>*@
+}
+}
+                         </div>
+                </div>
+            </div>

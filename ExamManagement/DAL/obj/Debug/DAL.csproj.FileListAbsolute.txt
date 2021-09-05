@@ -1,0 +1,7 @@
+D:\Main Project\ExamManagement\DAL\bin\Debug\DAL.dll.config
+D:\Main Project\ExamManagement\DAL\bin\Debug\DAL.dll
+D:\Main Project\ExamManagement\DAL\bin\Debug\DAL.pdb
+D:\Main Project\ExamManagement\DAL\bin\Debug\EntityFramework.dll
+D:\Main Project\ExamManagement\DAL\bin\Debug\EntityFramework.xml
+D:\Main Project\ExamManagement\DAL\obj\Debug\DAL.dll
+D:\Main Project\ExamManagement\DAL\obj\Debug\DAL.pdb

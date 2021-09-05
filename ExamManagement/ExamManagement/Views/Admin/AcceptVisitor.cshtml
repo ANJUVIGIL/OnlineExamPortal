@@ -1,0 +1,159 @@
+﻿@model ExamManagement.Models.Ent_Register
+
+@{
+    ViewBag.Title = "AcceptVisitor";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div id="page-wrapper">
+        <div class="graphs">
+     	<div class="col_3">
+<h2 style="text-align:center;">Update Visitors Status</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+       @* <legend>Ent_Register</legend>*@
+
+@*         <div class="display-label">ID</div>
+    <div class="display-field" style="
+  
+    color: black;
+    background-color:white;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+        @Html.DisplayFor(model => model.Rid)
+    </div>*@
+        <img src="@ViewBag.img" height="180px" width="180px" style="border-radius:100px; display: block;
+  margin-left: 37%;
+  margin-right: auto;"
+ />
+        <br />
+        <div class="display-label">
+            Name
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+       <div class="display-label">
+            Email
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+
+        <div class="display-label">
+            Phone
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+
+        <div class="display-label">
+            Department
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Department)
+        </div>
+
+         <div class="display-label">
+            Password
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.password)
+        </div>
+
+        @*<div class="display-label">
+            EntryDate
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.EntryDate)
+        </div>*@
+
+         <div class="display-label">
+            Status
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Status)
+        </div>
+
+        <div class="display-label">
+            Role
+        </div>
+        <div  class="display-field" style="
+  
+   color: #ffffff;
+    background-color: #a5917491;
+    height: 40px;
+    
+    font-size: 25px;
+    font-family: cursive;">
+            @Html.DisplayFor(model => model.Role)
+        </div>
+
+       <br />
+
+        <p>
+            <input  style="
+               
+  
+   color: #ffffff;
+    background-color: orange;
+    height: 40px;
+    width:100%;
+     /*margin-left: 30%;*/
+    font-size: 25px;
+    font-family: cursive;"type="submit" value="Approve" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
